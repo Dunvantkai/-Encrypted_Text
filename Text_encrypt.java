@@ -26,4 +26,4 @@ public class Text_encrypt{
         System.out.println(encry);
         }        
 }
- 
+//Made By Kai 
