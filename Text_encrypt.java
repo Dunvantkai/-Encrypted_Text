@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Text_encrypt{
     public static void main(String[] args) {
+        System.out.println("Encrypt Program");
         Scanner myObj = new Scanner(System.in);
         System.out.print("Enter Your Text: ");
         String userInput = myObj.nextLine();
