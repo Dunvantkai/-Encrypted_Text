@@ -3,10 +3,25 @@ import java.util.Scanner;
 public class Text_encrypt{
     public static void main(String[] args) {
         System.out.println("Encrypt Program");
-        Scanner myObj = new Scanner(System.in);
+
+        Scanner reader = new Scanner(System.in);
         System.out.print("Enter Your Text: ");
-        String userInput = myObj.nextLine();
-        int seed = 7;
+        String userInput = reader.nextLine();
+
+        reader = new Scanner(System.in);
+        System.out.print("Enter Your Seed: ");
+        int seed = reader.nextInt();
+
+        reader = new Scanner(System.in);
+        System.out.println("Type Y to Encrypt");
+        System.out.println("Type N to UnEncrypt");
+        System.out.println("Type EXIT to Close the Program");
+        System.out.print(">: ");
+        String enun = reader.nextLine();
+        enun = enun.toUpperCase();
+        System.out.println(enun);
+
+
         String UperUserInput = userInput.toUpperCase();
         int lenthOfInput = UperUserInput.length();
         int place = 0;
@@ -18,11 +33,28 @@ public class Text_encrypt{
 
             int NumberinAuf = auf.indexOf(letter);
             if (NumberinAuf != -1) {
-                int AfterNumberinAuf = (NumberinAuf + seed) % auf.length();
-                char encryLetter = auf.charAt(AfterNumberinAuf);
-                String lencry = encry + encryLetter;
-                encry = lencry;
-                //System.out.println(encry);
+                if (enun.equals("Y")) {    
+                    int AfterNumberinAuf = (NumberinAuf + seed) % auf.length();
+
+                    if (AfterNumberinAuf < 0) {
+                        AfterNumberinAuf = AfterNumberinAuf + 27;
+                    }
+                    char encryLetter = auf.charAt(AfterNumberinAuf);
+                    String lencry = encry + encryLetter;
+                    encry = lencry;
+                    //System.out.println(encry);
+                }
+                if (enun.equals("N")) {
+                    int AfterNumberinAuf = (NumberinAuf - seed) % auf.length();
+
+                    if (AfterNumberinAuf < 0) {
+                        AfterNumberinAuf = AfterNumberinAuf + 27;
+                    }
+                    char encryLetter = auf.charAt(AfterNumberinAuf);
+                    String lencry = encry + encryLetter;
+                    encry = lencry;
+                    //System.out.println(encry);
+                }
             }
 
             place = place + 1;
