@@ -5,7 +5,7 @@ public class Text_unencrypt {
         Scanner myObj = new Scanner(System.in);
         System.out.print("Enter Your Text: ");
         String userInput = myObj.nextLine();
-        int seed = 9;
+        int seed = 7;
         String UperUserInput = userInput.toUpperCase();
         int lenthOfInput = UperUserInput.length();
         int place = 0;
@@ -18,6 +18,9 @@ public class Text_unencrypt {
             int NumberinAuf = auf.indexOf(letter);
             if (NumberinAuf != -1) {
                 int AfterNumberinAuf = (NumberinAuf - seed) % auf.length();
+                if (AfterNumberinAuf < 0) {
+                    AfterNumberinAuf = AfterNumberinAuf + 27;
+                }
                 char encryLetter = auf.charAt(AfterNumberinAuf);
                 String lencry = encry + encryLetter;
                 encry = lencry;

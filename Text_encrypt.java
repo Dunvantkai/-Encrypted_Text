@@ -5,7 +5,7 @@ public class Text_encrypt{
         Scanner myObj = new Scanner(System.in);
         System.out.print("Enter Your Text: ");
         String userInput = myObj.nextLine();
-        int seed = 9;
+        int seed = 7;
         String UperUserInput = userInput.toUpperCase();
         int lenthOfInput = UperUserInput.length();
         int place = 0;
