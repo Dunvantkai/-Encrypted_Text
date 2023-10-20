@@ -1,13 +1,13 @@
-<<<<<<< Updated upstream
-=======
 import java.util.Scanner;
->>>>>>> Stashed changes
-public class Text_encrypt{
+public class Text_unencrypt {
     public static void main(String[] args) {
-        String userInput = "cant even right now";
+        System.out.println("Unencrypt Program");
+        Scanner myObj = new Scanner(System.in);
+        System.out.print("Enter Your Text: ");
+        String userInput = myObj.nextLine();
+        int seed = 7;
         String UperUserInput = userInput.toUpperCase();
         int lenthOfInput = UperUserInput.length();
-        int seed = 7;
         int place = 0;
         String encry = (">");
         String auf = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
@@ -17,7 +17,10 @@ public class Text_encrypt{
 
             int NumberinAuf = auf.indexOf(letter);
             if (NumberinAuf != -1) {
-                int AfterNumberinAuf = (NumberinAuf + seed) % auf.length();
+                int AfterNumberinAuf = (NumberinAuf - seed) % auf.length();
+                if (AfterNumberinAuf < 0) {
+                    AfterNumberinAuf = AfterNumberinAuf + 27;
+                }
                 char encryLetter = auf.charAt(AfterNumberinAuf);
                 String lencry = encry + encryLetter;
                 encry = lencry;
@@ -28,6 +31,6 @@ public class Text_encrypt{
         }
         System.out.println(UperUserInput);
         System.out.println(encry);
-        }        
+        }            
 }
-//Made By Kai 
+//made by kai
