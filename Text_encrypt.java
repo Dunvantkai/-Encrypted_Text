@@ -1,6 +1,9 @@
+package text_encrypt;
 import java.util.Scanner;
-public class Text_encrypt{
+public class Main{
     public static void main(String[] args) {
+    	int close = 0;
+    	while (close < 1) {
         System.out.println("Encrypt Program");
 
         Scanner reader = new Scanner(System.in);
@@ -54,12 +57,17 @@ public class Text_encrypt{
                     encry = lencry;
                     //System.out.println(encry);
                 }
+                if (enun.equals("EXIT")) {
+                	close = 1;
+                }
             }
 
             place = place + 1;
         }
         System.out.println(UperUserInput);
         System.out.println(encry);
+        System.out.print("\n");
         }        
+    }
 }
 //Made By Kai 
